@@ -11,7 +11,7 @@ class NoCandidateFound(PipToolsError):
         sorted_versions = sorted(c.version for c in self.candidates_tried)
         lines = [
             'Could not find a version that matches {}'.format(self.ireq),
-            'Tried: {}'.format(', '.join(str(version) for version in sorted_versions) or '(no version found at all)')
+            'Tried: {}'.format(', '.join(str(version) for version in sorted_versions) or '(no version found at all. Please check your version specifier and version number. See PEP440 for more information.)')
         ]
         return '\n'.join(lines)
 
